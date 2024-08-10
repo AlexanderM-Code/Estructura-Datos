@@ -6,3 +6,9 @@ if edad < 18:
 else:
     print("Bienvenido!")
 
+# preguntar el nombre y mostrar en pantalla edad y nombre
+
+nombre = input("Introduce tu nombre: ")
+edad = int(input("Introduce tu edad: "))
+
+print("Hola", nombre, "tienes", edad, "años")
