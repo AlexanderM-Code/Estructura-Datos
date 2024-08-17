@@ -1,13 +1,10 @@
 # Ejercicio 3 
 
-# Solicitar los números al usuario
 numero1 = float(input("Ingrese el primer número: "))
 numero2 = float(input("Ingrese el segundo número: "))
 
-# Solicitar la operación al usuario
 operacion = input("Ingrese la operación a realizar (+, -, x, /): ")
 
-# Realizar la operación y mostrar el resultado
 if operacion == "+":
     resultado = numero1 + numero2
     print(f"{numero1} + {numero2} = {resultado}")
