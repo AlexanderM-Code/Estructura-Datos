@@ -4,9 +4,6 @@ class Animal:
         self.tipo = tipo
         self.edad = edad
 
-    def __eq__(self, otro):
-        return self.nombre == otro.nombre and self.tipo == otro.tipo
-
     def __str__(self):
         return f"{self.nombre} (es {self.tipo} y tiene {self.edad} años)"
 
@@ -36,28 +33,22 @@ class ListaEnlazada:
     def existe_animal(self, animal):
         actual = self.cabeza
         while actual is not None:
-            if actual.animal == animal:
+            if actual.animal.nombre == animal.nombre:  
                 return True
             actual = actual.next
         return False
-    
-    def mostrar_animales_recursivo(self):
-        self._mostrar_animales_recursivo_aux(self.cabeza)
 
-    def _mostrar_animales_recursivo_aux(self, nodo):
+    def mostrar_animales(self):
+        self._mostrar_animales_recursivo(self.cabeza)
+
+    def _mostrar_animales_recursivo(self, nodo):
         if nodo is not None:
             print(nodo.animal)
-            self._mostrar_animales_recursivo_aux(nodo.next)
-
-    def mostrar_animales_bucle(self):
-        actual = self.cabeza
-        while actual is not None:
-            print(actual.animal)
-            actual = actual.next
+            self._mostrar_animales_recursivo(nodo.next)
 
 def agregar_animales_a_lista(zoologico):
     while True:
-        print("-"*80)
+        print("-" * 80)
         print("--- Agregar Animal al Zoológico ---")
         print()
         nombre = input("Nombre del animal: ")
@@ -80,7 +71,7 @@ lista_de_animales = [
 ]
 
 zoologico = ListaEnlazada()
-print("-"*80)
+print("-" * 80)
 print("Lista de animales en el zoologico:")
 print()
 for animal in lista_de_animales:
@@ -89,9 +80,6 @@ for animal in lista_de_animales:
 agregar_animales_a_lista(zoologico)
 zoologico.agregar_animales(lista_de_animales)
 
-print("-"*80)
+print("-" * 80)
 print("Animales en el zoológico (Recursivo):")
-zoologico.mostrar_animales_recursivo()
-print("-"*80)
-print("Animales en el zoológico (Bucle):")
-zoologico.mostrar_animales_bucle()
+zoologico.mostrar_animales()
