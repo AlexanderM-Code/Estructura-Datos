@@ -46,6 +46,16 @@ class ListaEnlazada:
             print(nodo.animal)
             self._mostrar_animales_recursivo(nodo.next)
 
+    def mostrar_animales_bucle(self):
+        actual = self.cabeza
+        if actual is None:
+            print("No hay animales en la lista.")
+            return
+
+        while actual is not None:
+            print(actual.animal)
+            actual = actual.next
+
 def agregar_animales_a_lista(zoologico):
     while True:
         print("-" * 80)
@@ -83,3 +93,7 @@ zoologico.agregar_animales(lista_de_animales)
 print("-" * 80)
 print("Animales en el zoológico (Recursivo):")
 zoologico.mostrar_animales()
+
+print("-" * 80)
+print("Animales en el zoológico (Bucle):")
+zoologico.mostrar_animales_bucle()

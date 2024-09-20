@@ -81,13 +81,14 @@ def agregar_tarea_a_la_lista():
     lista_tareas = ListaDeTareas()
 
     while True:
+        print("-"*80)
         tarea_nombre = input("Ingrese el nombre de la tarea (o 'salir' para terminar): ")
         if tarea_nombre.lower() == 'salir':
             break
 
         descripcion = input("Ingrese la descripción de la tarea: ")
         prioridad = int(input("Ingrese el nivel de prioridad (1 es alto, 2 es mediano, 3 es bajo): "))
-        fecha_vencimiento = input("Ingrese la fecha de vencimiento (ejemplo: 2024-09-30): ")
+        fecha_vencimiento = input("Ingrese la fecha de vencimiento (ejemplo: 2024-09-20): ")
 
         nueva_tarea = Tarea(descripcion, prioridad, fecha_vencimiento, tarea_nombre)
 
@@ -100,6 +101,7 @@ def buscar_y_eliminar_en_bucle(lista_tareas):
         print("Tareas actuales:")
         lista_tareas.mostrar_tareas()
 
+        print("-"*80)
         nombre_tarea = input("Ingrese el nombre de la tarea a buscar y eliminar (o 'salir' para terminar): ")
         if nombre_tarea.lower() == 'salir':
             break
