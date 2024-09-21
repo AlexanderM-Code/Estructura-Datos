@@ -11,8 +11,10 @@ class Vehiculo:
             print(f"Advertencia: {self.tipo} {self.marca} tiene poco combustible, necesita recargarse")
         else:
             print(f"{self.tipo} {self.marca} se ha encendido correctamente")
+    
     def arrancar(self):
         pass
+    
     print("-"*80)
     def __str__(self):
         return f"En {self.tipo} {self.marca} utilizamos {self.combustible}"
